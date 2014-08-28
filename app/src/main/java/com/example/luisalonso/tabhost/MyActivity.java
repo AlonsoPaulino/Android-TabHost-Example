@@ -11,7 +11,6 @@ import android.widget.TabHost;
 
 public class MyActivity extends Activity {
 
-    /*Probando si funciona el push :v*/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
