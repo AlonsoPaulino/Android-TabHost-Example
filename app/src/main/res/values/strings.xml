@@ -7,4 +7,5 @@
     <string name="input_text">INPUT</string>
     <string name="output_text">OUTPUT</string>
     <string name="welcome_text"></string>
+    <string name="maintenance">In Maintenance...</string>
 </resources>

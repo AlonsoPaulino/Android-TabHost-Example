@@ -1,6 +1,8 @@
 package com.example.luisalonso.tabhost;
-import android.app.Fragment;
+
 import android.os.Bundle;
+
+import android.support.v4.app.Fragment;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
@@ -95,15 +97,15 @@ public class Console extends Fragment {
         }else{
             send.setEnabled(false);
         }
-        if(output_text.getText().length()!=0 && output_text.getText().toString()!="")
+        if(output_text.getText().length()!=0)
             output_clear.setEnabled(true);
         else output_clear.setEnabled(false);
-        if(input_text.getText().length()!=0 && input_text.getText().toString()!="")
+        if(input_text.getText().length()!=0)
             input_clear.setEnabled(true);
         else input_clear.setEnabled(false);
     }
 
-    public void sendAction(){output_text.setText(input_text.getText().toString());}
+    public void sendAction(){output_text.setText(input_text.getText());}
     public void clearInput(){input_text.setText("");}
     public void clearOutput(){output_text.setText("");}
 }
