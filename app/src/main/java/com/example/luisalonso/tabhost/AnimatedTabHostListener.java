@@ -19,28 +19,20 @@ public class AnimatedTabHostListener implements OnTabChangeListener{
      *
      * @param tabHost
      */
-    public AnimatedTabHostListener(TabHost tabHost)
-    {
+    public AnimatedTabHostListener(TabHost tabHost){
         this.tabHost = tabHost;
         this.previousView = tabHost.getCurrentView();
     }
 
-    /**
-     * When tabs change we fetch the current view that we are animating to and animate it and the previous view in the
-     * appropriate directions.
-     */
+    
     @Override
-    public void onTabChanged(String tabId)
-    {
+    public void onTabChanged(String tabId){
 
         currentView = tabHost.getCurrentView();
-        if (tabHost.getCurrentTab() > currentTab)
-        {
+        if (tabHost.getCurrentTab() > currentTab){
             previousView.setAnimation(outToLeftAnimation());
             currentView.setAnimation(inFromRightAnimation());
-        }
-        else
-        {
+        }else{
             previousView.setAnimation(outToRightAnimation());
             currentView.setAnimation(inFromLeftAnimation());
         }
@@ -54,8 +46,7 @@ public class AnimatedTabHostListener implements OnTabChangeListener{
      *
      * @return Animation the Animation object
      */
-    private Animation inFromRightAnimation()
-    {
+    private Animation inFromRightAnimation(){
         Animation inFromRight = new TranslateAnimation(Animation.RELATIVE_TO_PARENT, 1.0f, Animation.RELATIVE_TO_PARENT, 0.0f,
                 Animation.RELATIVE_TO_PARENT, 0.0f, Animation.RELATIVE_TO_PARENT, 0.0f);
         return setProperties(inFromRight);
@@ -66,8 +57,7 @@ public class AnimatedTabHostListener implements OnTabChangeListener{
      *
      * @return Animation the Animation object
      */
-    private Animation outToRightAnimation()
-    {
+    private Animation outToRightAnimation(){
         Animation outToRight = new TranslateAnimation(Animation.RELATIVE_TO_PARENT, 0.0f, Animation.RELATIVE_TO_PARENT, 1.0f,
                 Animation.RELATIVE_TO_PARENT, 0.0f, Animation.RELATIVE_TO_PARENT, 0.0f);
         return setProperties(outToRight);
@@ -78,8 +68,7 @@ public class AnimatedTabHostListener implements OnTabChangeListener{
      *
      * @return Animation the Animation object
      */
-    private Animation inFromLeftAnimation()
-    {
+    private Animation inFromLeftAnimation(){
         Animation inFromLeft = new TranslateAnimation(Animation.RELATIVE_TO_PARENT, -1.0f, Animation.RELATIVE_TO_PARENT, 0.0f,
                 Animation.RELATIVE_TO_PARENT, 0.0f, Animation.RELATIVE_TO_PARENT, 0.0f);
         return setProperties(inFromLeft);
@@ -90,8 +79,7 @@ public class AnimatedTabHostListener implements OnTabChangeListener{
      *
      * @return Animation the Animation object
      */
-    private Animation outToLeftAnimation()
-    {
+    private Animation outToLeftAnimation(){
         Animation outtoLeft = new TranslateAnimation(Animation.RELATIVE_TO_PARENT, 0.0f, Animation.RELATIVE_TO_PARENT, -1.0f,
                 Animation.RELATIVE_TO_PARENT, 0.0f, Animation.RELATIVE_TO_PARENT, 0.0f);
         return setProperties(outtoLeft);
@@ -102,8 +90,7 @@ public class AnimatedTabHostListener implements OnTabChangeListener{
      * @param animation the animation to give common properties
      * @return the animation with common properties
      */
-    private Animation setProperties(Animation animation)
-    {
+    private Animation setProperties(Animation animation){
         animation.setDuration(ANIMATION_TIME);
         animation.setInterpolator(new AccelerateInterpolator());
         return animation;
