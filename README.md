@@ -1,3 +1,3 @@
 TabHost
 =======
-Creacion de interfaces con Android, TABHOST + FRAGMENTS.
+Interfaz Android con TabHost y efecto ViewPager
